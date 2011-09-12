@@ -1,0 +1,1 @@
+page.replace_html("1", render("<b>hello</b>"))

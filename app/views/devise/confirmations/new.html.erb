@@ -1,0 +1,20 @@
+<div class="post_submit_form">
+<h2>Resend Activation Email</h2>
+<%= devise_error_messages! %>
+
+<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+
+   <div class="field">
+        <div>
+            <%= f.label :email %>
+            <span> Insert your registration email</span>
+        </div>
+        <%= f.text_field :email %>
+    </div>
+    <div class="actions">
+        <%= f.submit "Resend Activation Email" %>
+    </div>
+<% end %>
+</div>
+
+<!-- <%= render :partial => "devise/shared/links" %> -->

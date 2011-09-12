@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<header class="topics">
+<p>
+  <h2><%= @topic.title %></h2>
+  <h3>Owned by: <%= link_to @topic.user.username, @topic.user %></h3> 
+</p>
+</header>
+
+<!-- <h3>Submissions: </h3> -->
+
+<%= render "shared/posts" %>
+
+<div class="post_submit_form">
+<h3>Do you have any links that better solve the query? Add it now!</h3>
+<%= form_for([@topic, @topic.posts.build]) do |f| %>
+     <div class="field">
+        <div>
+            <%= f.label :link, 'URL' %>
+            <span>Add the URL</span>
+        </div>
+        <%= f.text_field :link, :value => params[:post_link] %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
+</div>
+
+<!-- <%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %> -->

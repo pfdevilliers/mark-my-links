@@ -1,0 +1,43 @@
+<div class="post_submit_form">
+<h2>Register</h2>
+
+<%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+    <div class="field">
+        <div>
+            <%= f.label :email %>
+            <span>Insert your email</span>
+        </div>
+        <%= f.text_field :email %>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :username %>
+            <span>Insert your username</span>
+        </div>
+        <%= f.text_field :username %></p>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :password %>
+            <span>Insert your password</span>
+        </div>
+        <%= f.password_field :password %></p>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :password_confirmation %>
+            <span>Confirm your password</span>
+        </div>
+        <%= f.password_field :password_confirmation %></p>
+    </div>
+    <div class="actions">
+        <%= f.submit "Register" %>
+    </div>
+    <div class="links">
+        <%= link_to "Already have an account?", new_session_path(resource_name) %>
+    </div>
+<% end %>
+</div>
+<!-- <%= render :partial => "devise/shared/links" %> -->

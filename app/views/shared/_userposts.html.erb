@@ -1,0 +1,25 @@
+<% @posts.each do |post| %>
+    <% has_voted = did_user_vote_on_topic_post?(post.topic_id, post.id) %> 
+    <div class="submission">
+        <div class="submission_votes">
+            <% if !has_voted %>
+            <span id="green"><%= link_to 'Up', :controller => "/posts" ,:action =>
+                "vote", :post_id => post.id, :vote => 1, :redirect_to =>
+                user_path(@user) %></span>
+            <% end %>
+            <%= get_number_of_topics_post_votes(post.topic_id, post.id) %>
+            <% if !has_voted %>
+            <span id="red"><%= link_to 'Down', :controller => "/posts", :action =>
+                "vote", :post_id => post.id, :vote => -1, :redirect_to =>
+                user_path(@user) %></span>
+            <% end %>
+        </div>
+        <div class="submission_link">
+            <p><%= link_to post.link, post.link %></p>
+        </div>
+        <div class="submission_user">
+            Posted by <%= link_to post.user.username, post.user %>
+        </div>
+    </div>
+<% end %>
+

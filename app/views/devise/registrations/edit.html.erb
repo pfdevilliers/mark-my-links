@@ -1,0 +1,52 @@
+<div class="post_submit_form">
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <div class="field">
+        <div>
+            <%= f.label :email %>
+            <span>Insert your email</span>
+        </div>
+        <%= f.text_field :email %>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :username %>
+            <span>Insert your username</span>
+        </div>
+        <%= f.text_field :username %>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :password %>
+            <span>Insert your new password</span>
+        </div>
+            <%= f.password_field :password %>
+            <i>(leave blank if you don't want to change it)</i>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :password_confirmation %>
+            <span>Confirm your new password</span>
+        </div>
+            <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="field">
+        <div>
+            <%= f.label :current_password %>
+            <span>Insert your current password</span>
+        </div>
+            <%= f.password_field :current_password %>
+            <i>(we need your current password to confirm your changes)</i>
+    </div>
+    <div class="actions">
+        <%= f.submit "Update" %>
+    </div>
+<% end %>
+</div>
+<br />
+<!-- <h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+-->
+<!-- <%= link_to "Back", :back %> -->

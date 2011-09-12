@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @user.username %>
+</p>
+
+<% if current_user.id == @user.id %>
+    <p>
+      <b>Email:</b>
+      <%= @user.email %>
+    </p>
+<% end %>
+
+<header class='topics'>
+    <h2>Posts Created by You</h2>
+</header>
+<%= render 'shared/topics' %>
+
+<header class='topics'>
+    <h2>Links Added by You</h2>
+</header>
+
+<%= render 'shared/userposts' %>
+

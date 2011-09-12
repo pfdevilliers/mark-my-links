@@ -1,0 +1,22 @@
+<% @topics.each do |topic| %>
+<% topic_views = get_number_of_topic_views(topic.id) %>
+  <div class='cell'>
+    <div class='cell-container-posts'>
+        <span class='num-posts'><%= topic.posts.size %></span>
+        <span class='num-posts-string'><%= get_word_plural(topic.posts.size, "Link") %></span>
+    </div>
+    <div class='cell-container-views'>
+        <span class='num-views'><%= topic_views %></span>
+        <span class='num-views-string'><%= get_word_plural(topic_views, "View")%></span>
+    </div>
+    <div class='cell-container-question'>
+        <p><%= link_to topic.title, topic %></p>
+
+        <div class='cell-container-info'>
+            <span class='topic-time'><%=calculate_time_since_post(topic.created_at)%></span>
+            <%= link_to topic.user.username, topic.user %>
+        </div>
+    </div>
+  </div>
+<% end %>
+
