@@ -28,8 +28,8 @@
         <% end -%>
     </div>
 
-  <%= hidden_field_tag (:next, session[:return_to]) %>
-  <%= hidden_field_tag (:post_link, session[:post_link]) %>
+  <%= hidden_field_tag :next, session[:return_to] %>
+  <%= hidden_field_tag :post_link, session[:post_link] %>
     <div class="actions">
         <%= f.submit "Sign in" %>
     </div>
